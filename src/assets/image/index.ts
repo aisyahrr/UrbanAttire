@@ -86,9 +86,9 @@ export const productall = {
     sneakersTrendy,dressPesta,dressKotak,brownJacket2, whiteShirtFormal,blackTshirt,
 };
 
-import KemejaBlue from "./ImgCheckoutClotches/ClotchesMen/kemejapolos_blue.jpg";
-import KemejaGrey from "./ImgCheckoutClotches/ClotchesMen/kemejapolos_grey.jpg";
-import KemejaTosca from "./ImgCheckoutClotches/ClotchesMen/kemejapolos_tosca.jpg";
+import KemejaBlue from "./ImgCheckoutClotches/ClotchesMen/Kemejapolosblue.jpg";
+import KemejaGrey from "./ImgCheckoutClotches/ClotchesMen/kemejapolosgrey.jpg";
+import KemejaTosca from "./ImgCheckoutClotches/ClotchesMen/kemejapolostosca.jpg";
 import KemejaBlack from "./ImgCheckoutClotches/KemejaMen/KemejaBlack.jpg";
 import KemejaNavy from "./ImgCheckoutClotches/KemejaMen/KemejaNavy.jpg";
 

@@ -59,7 +59,7 @@ const Sale: React.FC = () => {
       className="
         flex gap-3
         overflow-x-auto
-        px-1
+        px-1 py-2
         scrollbar-hide
         snap-x snap-mandatory
       "
@@ -69,7 +69,7 @@ const Sale: React.FC = () => {
           key={item.id}
           className="
             snap-start
-            min-w-[160px]
+            min-w-[150px]
             md:min-w-[200px]
             bg-white
             shadow
@@ -80,7 +80,7 @@ const Sale: React.FC = () => {
             <img
               src={item.imageUrl}
               alt={item.name}
-              className="w-full h-40 md:h-48 object-cover rounded-t-xl"
+              className="w-full h-36 md:h-48 object-cover rounded-t-xl"
             />
 
             <span

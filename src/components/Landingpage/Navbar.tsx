@@ -164,7 +164,7 @@ const NavbarUrban: React.FC = () => {
                 <input
                 type="text"
                 placeholder="Cari di Urban Attire..."
-                className="ml-2 pl-2 md:w-[600px] w-[400px] bg-slate-100 focus:outline-none"
+                className="ml-2 pl-2 lg:w-[600px] bg-slate-100 focus:outline-none"
                 />
             </form>
             </div>

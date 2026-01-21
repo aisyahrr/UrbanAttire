@@ -36,6 +36,23 @@ type CategoryCode =
     | "GEN"
     | "STY"
     | "MAT";
+const promoInfo = [
+  { title: "DAFTAR SEKARANG", subtitle: "& DAPATKAN DISKON 10%" },
+  { title: "PENGIRIMAN CEPAT", subtitle: "& TEPAT WAKTU" },
+  { title: "GARANSI KEPUASAN 100%", subtitle: "SEMUA PRODUKNYA ORI" },
+];
+
+const mobileInfoSettings = {
+  dots: false,
+  arrows: false,
+  infinite: true,
+  autoplay: true,
+  autoplaySpeed: 2500,
+  speed: 600,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
 const Clotches: React.FC = () =>{
     const [products, setProducts] = useState<TCard[]>([]);
     const [loading,setLoading] = useState(true);
@@ -112,50 +129,73 @@ const Clotches: React.FC = () =>{
     return(
     <div>
         <hr className="h-[1px] bg-gray-300 border-0 rounded" />
-        <div className="bg-promo">
-            <div className="overflow-hidden rounded-xl h-[550px] flex justify-center items-center sm:block">
+        <div className="bg-promo py-3">
+            <div
+                className="
+                overflow-hidden pt-5 md:pt-0
+                h-[255px] sm:h-[500px] md:h-[480px]
+                flex justify-center items-center
+                "
+            >
                 <div className="container pb-8">
                     <Slider {...sliderSettings}>
                     {promo.map((data, index) => (
                         <div key={data.id}>
                         <div
-                            className="grid h-[400px] rounded-lg shadow-xl shadow-[#4F4F4F] mx-10 my-10 grid-cols-2"
+                            className="grid h-[200px] sm:h-[350px] md:h-[400px] rounded-lg  mx-3 md:mx-10 my-5 md:my-10 grid-cols-2"
                             style={{
                             backgroundImage: `url(${data.background || ""})`,
                             backgroundSize: "cover",
                             backgroundPosition: "center",
                             }}
                         >
+                           {/* INDEX 0 */}
                             {index === 0 ? (
                             <>
-                                <div className="flex flex-col justify-center z-10 gap-1 text-left pl-56 text-white">
-                                <h1 className="font-pacifico text-xl pl-4">
+                                <div className="flex flex-col justify-center z-10 gap-1 text-left pl-6 sm:pl-12 md:pl-20 text-white">
+                                <h1 className="font-pacifico text-sm sm:text-base">
                                     {data.subtitle}
                                 </h1>
-                                <h1 className="font-playfair text-5xl">
+                                <h1 className="font-playfair text-2xl md:text-6xl">
                                     {data.title}
                                 </h1>
-                                <h1 className="text-4xl font-calistoga font-bold">
+                                <h1 className="text-lg md:text-4xl font-calistoga font-bold">
                                     {data.title2}
                                 </h1>
                                 </div>
-                                <div className="flex justify-end items-center pr-36">
+
+                                <div className="flex justify-end items-center pr-6 sm:pr-12 md:pr-24">
                                 <img
                                     src={data.img}
                                     alt="Promo"
-                                    className="w-[400px] h-[350px] object-contain drop-shadow-lg"
+                                    className="
+                                    w-[220px] sm:w-[280px] md:w-[400px]
+                                    aspect-[4/3]
+                                    object-contain
+                                    drop-shadow-lg
+                                    "
                                 />
                                 </div>
                             </>
                             ) : index === 1 ? (
+
                             <div className="relative flex justify-center items-center col-span-2">
                                 <img
                                 src={data.img}
                                 alt="Promo"
-                                className="w-[400px] h-[350px] object-contain drop-shadow-lg"
+                                className="w-[220px] sm:w-[280px] md:w-[400px]
+                                aspect-[4/3]
+                                object-contain
+                                drop-shadow-lg"
                                 />
-                                <button className="absolute bottom-12 right-32 text-base font-semibold rounded-lg 
-                                border-black border-opacity-15 bg-black bg-opacity-70 border-2 px-5 py-2 text-white">
+                                <button className="absolute bottom-6 sm:bottom-10
+                                    right-6 sm:right-16
+                                    text-xs sm:text-sm font-semibold
+                                    rounded-lg
+                                    bg-black bg-opacity-70
+                                    border border-black border-opacity-20
+                                    px-4 py-2 text-white
+                                    ">
                                 {data.title}
                                 </button>
                             </div>
@@ -164,7 +204,7 @@ const Clotches: React.FC = () =>{
                         </div>
                     ))}
                     </Slider>
-                    <div className="flex justify-center mb-3 items-center px-16 gap-80">
+                    <div className="hidden md:flex justify-center mb-3 items-center px-16 gap-80">
                     {[
                         { title: "DAFTAR SEKARANG", subtitle: "& DAPATKAN DISKON 10%" },
                         { title: "PENGIRIMAN CEPAT", subtitle: "& TEPAT WAKTU" },
@@ -181,6 +221,22 @@ const Clotches: React.FC = () =>{
                         <span>{item.subtitle}</span>
                         </div>
                     ))}
+                    </div>
+                    <div className="md:hidden">
+                    <Slider {...mobileInfoSettings}>
+                        {promoInfo.map((item, idx) => (
+                        <div key={idx}>
+                            <div className="text-center font-sans text-xs px-4">
+                            <p className="font-semibold tracking-wide">
+                                {item.title}
+                            </p>
+                            <span className="text-[11px] text-gray-700">
+                                {item.subtitle}
+                            </span>
+                            </div>
+                        </div>
+                        ))}
+                    </Slider>
                     </div>
                 </div>
             </div>

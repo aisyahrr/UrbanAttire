@@ -342,7 +342,7 @@ const NavbarUrban: React.FC = () => {
                 <>
                     <button
                     className="h-9 w-full border rounded-md border-brandblue"
-                    onClick={() => navigate("/Masuk")}
+                    onClick={() => navigate("/login")}
                     >
                     Masuk
                     </button>

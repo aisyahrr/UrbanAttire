@@ -73,17 +73,34 @@ export default function Register() {
     };
 
     return (
-        <div className="flex h-screen">
+        <div className="min-h-screen flex flex-col md:flex-row justify-center bg-gradient-to-b from-white to-cyan-200">
         {/* KIRI */}
-        <div className="w-1/2 bg-gradient-to-b from-white to-cyan-200 flex items-center justify-center">
-            <h1 className="text-6xl font-semibold text-brandblue font-pacifico">
-            Urban' Attire
+        <div className="
+        md:w-1/2
+        flex items-center justify-center
+        py-10 md:py-0
+        ">
+            <h1 className="
+                text-3xl md:text-6xl
+                font-semibold text-brandblue
+                font-pacifico
+            ">
+                Urban' Attire
             </h1>
         </div>
 
         {/* KANAN */}
-        <div className="w-1/2 bg-gradient-to-b from-white to-cyan-200 flex items-center justify-center">
-            <div className="bg-white p-8 rounded-lg shadow-lg w-80">
+        <div className="
+        md:w-1/2
+        flex items-start md:items-center justify-center
+        px-4
+        ">
+        <div className="
+            bg-white
+            p-6 md:p-8
+            rounded-xl shadow-lg
+            w-full max-w-sm
+        ">
             <h2 className="text-lg font-semibold text-center mb-4">
                 Daftar Akun
             </h2>

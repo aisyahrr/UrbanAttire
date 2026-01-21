@@ -34,19 +34,30 @@ const CardList: React.FC<CardListProps> = ({
 
   return (
     <div className="container mx-auto px-4">
-      {title && (
-        <h2 className="text-center text-3xl font-bold pt-10">
-          {title}
-        </h2>
-      )}
+    {title && (
+      <h2 className="
+        text-center
+        text-xl sm:text-2xl md:text-3xl
+        font-bold
+        pt-6 sm:pt-8 md:pt-10
+      ">
+        {title}
+      </h2>
+    )}
 
-      {subtitle && (
-        <p className="text-center text-sm text-gray-500">
-          {subtitle}
-        </p>
-      )}
+    {subtitle && (
+      <p className="
+        text-center
+        text-xs sm:text-sm md:text-base
+        text-gray-500
+        mt-1 sm:mt-2
+      ">
+        {subtitle}
+      </p>
+    )}
 
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 pt-8">
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 py-4 px-2">
         {displayedData.map(item => (
           <Card key={item.id} item={item} />
         ))}

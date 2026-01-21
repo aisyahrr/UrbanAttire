@@ -216,9 +216,9 @@ const Details: React.FC = () => {
     if (!product) return <h2 className="text-center mt-10">Produk tidak ditemukan</h2>;
 
 return (
-    <div className="px-2 md:container justify-center items-center  md:mx-auto md:p-4">
+    <div className="w-full max-w-[1280px] mx-auto px-3 md:px-4">
         {/*Grid 1*/}
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 space-y-1.5 justify-center">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-12 space-y-1.5 justify-center">
                 {/* Foto Produk */}
                 <div className="col-span-1 mt-3">
                     <div className="relative border-3 border-gray-300 rounded-sm  md:h-[500px] p-3">
@@ -250,90 +250,130 @@ return (
                 </div>
                 {/* Detail Produk */}
                 <div className="col-span-1 justify-center">
-                    <h1 className="text-2xl font-semibold">{product.name}</h1>
+                    <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">{product.name}</h1>
                     <p className="text-gray-600">
                         Terjual 0 | ⭐ 0 (0 Rating)
                     </p>
 
                     <div className="flex mt-4 gap-2">
-                        <p className="text-sm text-gray-500 line-through">
+                        <p className="text-sm sm:text-base text-gray-500 line-through">
                         Rp. {product.old_price?.toLocaleString("id-ID")}
                         </p>
-                        <p className="text-sm text-red-600 font-bold">{product.discount}%</p>
+                        <p className="text-sm sm:text-base text-red-600 font-bold">{product.discount}%</p>
                     </div>
                     <p className="text-lg font-bold">
                         Rp. {product.price.toLocaleString("id-ID")}
                     </p>
 
-                    <div className="mt-7  border-gray-400 py-3">
+                    <div className="mt-3 md:mt-7  border-gray-400 py-3">
                         <hr className="w-full border-t border-gray-400" />
-                        <div className="flex gap-10 justify-center items-center my-2">
-                            <p className="font-bold ">Info Produk</p>
-                            <p className="font-bold">Ulasan</p>
-                            <p className="font-bold">Diskusi</p>
+                        <div className="flex gap-6 sm:gap-10 justify-center items-center my-2">
+                        <p className="font-semibold text-sm sm:text-base">Info Produk</p>
+                        <p className="font-semibold text-sm sm:text-base">Ulasan</p>
+                        <p className="font-semibold text-sm sm:text-base">Diskusi</p>
                         </div>
                         <hr className="w-full border-t border-gray-400" />
-                        <div className="py-2 text-base font-poppins">
-                            <p>{product.name}</p>
-                            <p className="text-justify text-base">{product.description}</p>
-                        </div>
+                        <div className="py-2 font-poppins">
+                                <p className="font-semibold text-sm sm:text-base">
+                                    {product.name}
+                                </p>
+                                <p className="text-justify text-sm sm:text-base text-gray-700 leading-relaxed">
+                                    {product.description}
+                                </p>
+                            </div>
                         <hr className="w-full border-t border-gray-400" />
                         <div className="flex justify-between items-center my-4">
                             <div className="flex gap-5 justify-center items-center">
                                 <img
-                                    src={product.shop?.logo || "/placeholder.png"}
-                                    alt=""
-                                    className="h-14 w-14 rounded-full"
+                                src={product.shop?.logo || "/placeholder.png"}
+                                alt=""
+                                className="h-10 w-10 sm:h-14 sm:w-14 rounded-full"
                                 />
                                 <div className="justify-center items-center">
-                                    <p className="font-bold">{product.shop?.name}</p>
-                                    <p className="text-sm font-normal">Online Kemaren</p>
+                                    <p className="font-bold text-sm sm:text-lg">
+                                    {product.shop?.name}
+                                    </p>
+
+                                    <p className="text-xs sm:text-sm text-gray-500">
+                                    Online Kemarin
+                                    </p>
                                 </div>
                             </div>
                             <button
-                                className="flex w-28 h-9 border bg-transparent border-brandblue rounded-lg items-center justify-center text-base font-roboto
-                                                            text-brandblue hover:bg-brandblue hover:text-white"
-                            > Follow
+                            className="
+                                flex w-24 sm:w-28 h-8 sm:h-9
+                                border border-brandblue rounded-lg
+                                items-center justify-center
+                                text-sm sm:text-base font-roboto
+                                text-brandblue hover:bg-brandblue hover:text-white
+                            "
+                            >
+                            Follow
                             </button>
                         </div>
-                        <p className="text-black font-semibold flex justify-start items-center mt-5 gap-1">
-                            <img 
-                                src={logoUrl} 
-                                alt="" className="h-4 w-4" />{" "}
-                                {" "} 4.7 Rating
-                            <span className="font-normal text-gray-600">
+                        <p className="
+                        text-sm sm:text-base
+                        text-black font-semibold
+                        flex items-center mt-4 gap-1
+                        ">
+                            <img src={logoUrl} alt="" className="h-3 w-3 sm:h-4 sm:w-4" />
+                            4.7 Rating
+                            <span className="font-normal text-gray-600 text-xs sm:text-sm">
                                 (128)
                             </span>
                         </p>
-                        <p className="text-black font-semibold flex justify-start items-center gap-1">
-                            <img 
-                                src={clock} alt="" 
-                                className="h-4 w-4" /> ± 30 menit
-                            <span className="font-normal text-gray-600">
-                                {" "}
+                        <p className="
+                        text-sm sm:text-base
+                        text-black font-semibold
+                        flex items-center gap-1
+                        ">
+                            <img src={clock} alt="" className="h-3 w-3 sm:h-4 sm:w-4" />
+                            ± 30 menit
+                            <span className="font-normal text-gray-600 text-xs sm:text-sm">
                                 pesanan diproses
                             </span>
                         </p>
                         <hr className="w-full border-t-1 border-gray-400 mt-3" />
                         <div className="mt-2 gap-1">
-                            <p className="pb-1 font-bold text-base">Pengiriman</p>
-                            <p className="text-gray-600 font-sm font-poppins font-normal flex justify-start items-center gap-1">
-                                <img src={location} alt="" className="h-4 w-4" /> Dikirim dari
-                                <span className=" font-semibold text-black">
-                                {" "}
-                                Jakarta Barat{" "}
-                                </span>
-                            </p>
-                            <p className="pl-5 items-center text-sm font-semibold">Ongkir Mulai Rp.9000</p>
-                            <p className="text-gray-600 font-normal text-base flex justify-start items-center mt-2">
-                                <FiSend className="h-4 w-4 text-black font-bold "/> 
-                                <span className="pl-1 text-sm">Regular | estimasi tiba besok - 26 Januari </span>
-                            </p>
+                        <p className="pb-1 font-bold text-sm sm:text-base">
+                            Pengiriman
+                        </p>
+
+                        <p className="
+                            text-gray-600 font-normal
+                            text-xs sm:text-sm
+                            flex items-center gap-1
+                        ">
+                            <img src={location} alt="" className="h-3 w-3 sm:h-4 sm:w-4" />
+                            Dikirim dari
+                            <span className="font-semibold text-black">
+                            Jakarta Barat
+                            </span>
+                        </p>
+
+                        <p className="pl-5 text-xs sm:text-sm font-semibold">
+                            Ongkir Mulai Rp.9000
+                        </p>
+
+                        <p className="
+                            text-gray-600 font-normal
+                            text-xs sm:text-sm
+                            flex items-center mt-2
+                        ">
+                            <FiSend className="h-3 w-3 sm:h-4 sm:w-4 text-black" />
+                            <span className="pl-1">
+                            Regular | estimasi tiba besok - 26 Januari
+                            </span>
+                        </p>
                         </div>
                         <hr className="w-full border-t-1 border-gray-400 mt-4" />
                         <div className="mt-2 flex justify-between items-center">
-                            <p className="text-base text-gray-600">Produk tidak sesuai?</p>
-                            <p className="text-base font-medium text-black">Laporkan</p>
+                            <p className="text-sm sm:text-base text-gray-600">
+                                Produk tidak sesuai?
+                            </p>
+                            <p className="text-sm sm:text-base font-medium text-black">
+                                Laporkan
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -341,23 +381,32 @@ return (
                 {/* Pilihan dan Checkout */}
                 <div className="col-span-1 pr-5 justify-center">
                     <div className="relative">
-                        <p className="font-semibold text-base">Pilih Ukuran</p>
+                        <p className="font-semibold text-sm sm:text-base">
+                        Pilih Ukuran
+                        </p>
                         <div className="flex flex-wrap gap-1 mt-2">
                         {uniqueSizes.map(size => (
-                            <button
+                                <button
                                 key={size}
-                                className={`px-4 py-2 text-sm rounded-sm ${
-                                selectedSize === size
-                                    ? "bg-brandblue text-white font-bold"
-                                    : "bg-gray-300 text-black"
-                                }`}
+                                className={`
+                                    px-3 sm:px-4 py-1.5 sm:py-2
+                                    text-xs sm:text-sm
+                                    rounded-sm
+                                    ${
+                                    selectedSize === size
+                                        ? "bg-brandblue text-white font-bold"
+                                        : "bg-gray-300 text-black"
+                                    }
+                                `}
                                 onClick={() => handleSizeClick(size)}
-                            >
+                                >
                                 {size}
-                            </button>
+                                </button>
                             ))}
                         </div>
-                        <p className="font-semibold text-base">Pilih Warna</p>
+                        <p className="font-semibold text-sm sm:text-base mt-3">
+                        Pilih Warna
+                        </p>
                         <div className="flex flex-wrap gap-1 my-2">
                         {allColors.map(color => {
                             const isAvailable = availableColorsBySize?.includes(color);
@@ -366,7 +415,9 @@ return (
                                 key={color}
                                 onClick={() => isAvailable && handleColorClick(color)}
                                 disabled={!isAvailable}
-                                className={`px-4 py-2 inline-block text-sm rounded-sm transition
+                                className={`px-3 sm:px-4 py-1.5 sm:py-2
+                                    text-xs sm:text-sm
+                                    rounded-sm transition
                                 ${
                                     selectedColor === color
                                     ? "bg-brandblue text-white font-bold"
@@ -382,15 +433,23 @@ return (
                         })}
                         </div>
                     </div>
-                    <div className="w-full flex justify-center md:justify-start">
+                    <div className="w-full flex md:justify-start">
                         <div className="relative w-fit h-auto">
-                            <div className="border-2 border-gray-300 mt-5 p-3 rounded-lg w-full justify-center items-center">
-                                <p className="font-semibold">Atur Jumlah Pemesanan</p>
+                            <div className="  border-2 border-gray-300
+                                mt-4 sm:mt-5
+                                p-3 rounded-lg
+                                w-full max-w-[400px]">
+                                <p className="font-semibold text-sm sm:text-base">Atur Jumlah Pemesanan</p>
                                 {/* tombol menambah pesanan */}
                                 <div className=" flex items-center mt-4">
-                                    <div className="flex items-center justify-center p-2 h-10 w-32 border-2 border-gray-300 rounded-lg">
+                                    <div className="flex items-center justify-center
+                                    p-2 h-9 sm:h-10 w-28 sm:w-32
+                                    border-2 border-gray-300 rounded-lg">
                                         <button
-                                            className="flex justify-center px-2 py-2 h-6 w-6 items-center bg-gray-400 text-white rounded-md text-base font-bold"
+                                            className="flex justify-center items-center
+                                            h-5 w-5 sm:h-6 sm:w-6
+                                            bg-gray-400 text-white
+                                            rounded-md text-sm sm:text-base font-bold"
                                             onClick={kurangiPesanan}
                                         >
                                             -
@@ -402,46 +461,74 @@ return (
                                             className="w-16 text-center "
                                         />
                                         <button
-                                            className="flex justify-center px-2 py-2 h-6 w-6 items-center bg-brandblue text-white rounded-md text-base font-bold"
+                                            className="flex justify-center items-center
+                                            h-5 w-5 sm:h-6 sm:w-6
+                                            bg-gray-400 text-white
+                                            rounded-md text-sm sm:text-base font-bold"
                                             onClick={tambahPesanan}
                                         >
                                             +
                                         </button>
                                     </div>
-                                    <p className="ml-3">
-                                    Stok :{" "}
-                                    <span className="font-bold">{product.stock}</span>
+                                    <p className="ml-3 text-xs sm:text-sm">
+                                    Stok : 
+                                    <span className="font-bold"> {product.stock}</span>
                                     </p>
                                 </div>
-                                <p className="mt-4 flex justify-between text-base">
+                                <p className="mt-4 flex justify-between text-sm sm:text-base">
                                 Sub total{" "}
                                 <span className="font-bold text-black">
                                     Rp. {subTotal.toLocaleString("id-ID")}
                                 </span>
                                 </p>
-                                <div className="mt-4 flex gap-3">
-                                    <button className="border hover:bg-brandblue hover:text-white px-4 py-2 rounded-lg w-36">
-                                    Beli
+                                <div className="mt-4 flex gap-2 sm:gap-3">
+                                    <button className="
+                                        border px-3 sm:px-4 py-2
+                                        rounded-lg w-full sm:w-36
+                                        text-sm sm:text-base
+                                        hover:bg-brandblue hover:text-white
+                                    ">
+                                        Beli
                                     </button>
-                                    <button 
-                                    onClick={handleAddToCart}
-                                    className="bg-brandblue text-white px-4 py-2 w-36 rounded-lg flex items-center justify-center gap-2">
-                                    <FaShoppingCart />
-                                    Keranjang
+
+                                    <button
+                                        onClick={handleAddToCart}
+                                        className="
+                                        bg-brandblue text-white
+                                        px-3 sm:px-4 py-2
+                                        w-full sm:w-36
+                                        rounded-lg
+                                        flex items-center justify-center gap-2
+                                        text-sm sm:text-base
+                                        "
+                                    >
+                                        <FaShoppingCart className="text-sm sm:text-base" />
+                                        Keranjang
                                     </button>
                                 </div>
                             </div>
-                            <div className="flex items-center justify-center p-2 gap-2 mt-2">
-                                <p className=" flex items-center gap-2">
-                                    <BsChatSquareText className="h-4 w-full" /> Chat{" "}
+                            <div className="
+                                flex items-center justify-center
+                                p-2 gap-3 mt-2
+                                text-xs sm:text-sm
+                                ">
+                                <p className="flex items-center gap-1">
+                                    <BsChatSquareText className="h-3 w-3 sm:h-4 sm:w-4" />
+                                    Chat
                                 </p>
-                                <img src={line} alt="" className="h-5 w-auto" />
-                                <p className=" flex items-center gap-2">
-                                    <IoMdHeartEmpty className="h-5 w-full" /> Wishtlist{" "}
+
+                                <img src={line} alt="" className="h-4 sm:h-5 w-auto" />
+
+                                <p className="flex items-center gap-1">
+                                    <IoMdHeartEmpty className="h-3 w-3 sm:h-4 sm:w-4" />
+                                    Wishlist
                                 </p>
-                                <img src={line} alt="" className="h-5 w-auto" />
-                                <p className=" flex items-center gap-2">
-                                    <RiShareForwardLine className="h-5 w-full" /> Share{" "}
+
+                                <img src={line} alt="" className="h-4 sm:h-5 w-auto" />
+
+                                <p className="flex items-center gap-1">
+                                    <RiShareForwardLine className="h-3 w-3 sm:h-4 sm:w-4" />
+                                    Share
                                 </p>
                             </div>
                         </div>
@@ -452,41 +539,40 @@ return (
             {/*Ulasan Pribadi*/}
             <div className="flex gap-4">
                 <div className="w-full md:w-2/3">
+
                     <hr className="w-full border-t border-gray-400" />
-                    <p className="py-3 font-bold">Ulasan Pembeli</p>
+                    <p className="py-3 font-bold text-sm sm:text-base">Ulasan Pembeli</p>
                     
                     <div className="flex h-auto shadow-md p-4 rounded-lg">
-                        <div className="flex gap-2 p-3 items-center">
-                            <div className="items-center">
-                                <div className="flex items-center justify-center ">
-                                    <span className="text-yellow-500 text-xl">⭐</span>
-                                    <span className="text-xl font-bold">4.7</span>
-                                    <span className="text-gray-500 text-sm ">/ 5.0</span>
-                                </div>
-                                <p className="flex text-gray-500 text-sm mt-1 gap-2 items-center " > 86% 
-                                    <span>|</span> 
-                                    <span>861 Ulasan</span>
-                                </p>
+                        <div className="flex gap-2 items-center">
+                        <div>
+                            <div className="flex items-center">
+                            <span className="text-yellow-500 text-lg sm:text-xl">⭐</span>
+                            <span className="text-lg sm:text-xl font-bold ml-1">4.7</span>
+                            <span className="text-gray-500 text-xs sm:text-sm ml-1">
+                                / 5.0
+                            </span>
                             </div>
-                            <img src={line} alt="" className="h-full w-2"/>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 p-3 items-center">
-                            <p className="flex items-center gap-1 text-sm">
-                            ⭐ 5 <span className="">(476 Ulasan)</span>
-                            </p>
-                            <p className="flex items-center gap-1 text-sm">
-                            ⭐ 4 <span className="">(241 Ulasan)</span>
-                            </p>
-                            <p className="flex items-center gap-1 text-sm">
-                            ⭐ 3 <span className="">(112 Ulasan)</span>
-                            </p>
-                            <p className="flex items-center gap-1 text-sm">
-                            ⭐ 2 <span className="">(26 Ulasan)</span>
-                            </p>
-                            <p className="flex items-center gap-1 text-sm">
-                            ⭐ 1 <span className="">(6 Ulasan)</span>
+
+                            <p className="flex text-gray-500 text-xs sm:text-sm mt-1 gap-1 items-center">
+                            86%
+                            <span>|</span>
+                            <span>861 Ulasan</span>
                             </p>
                         </div>
+                        </div>
+                        <div className="
+                        grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3
+                        gap-2 p-2 sm:p-3
+                        text-xs sm:text-sm
+                        ">
+                        <p className="flex items-center gap-1">⭐ 5 <span>(476 ulasan)</span></p>
+                        <p className="flex items-center gap-1">⭐ 4 <span>(241 ulasan)</span></p>
+                        <p className="flex items-center gap-1">⭐ 3 <span>(112 ulasan)</span></p>
+                        <p className="flex items-center gap-1">⭐ 2 <span>(26 ulasan)</span></p>
+                        <p className="flex items-center gap-1">⭐ 1 <span>(6 ulasan)</span></p>
+                        </div>
+
                     </div>
                     {/*review text*/}
                     <div className="mt-4">
@@ -500,14 +586,14 @@ return (
                                 />
                                 <div className="items-center justify-start">
                                     {/* Name & Date */}
-                                    <h2 className="font-semibold text-lg pb-1 ">{review.name}</h2>
+                                    <h2 className="font-semibold text-base sm:text-lg pb-1 ">{review.name}</h2>
                                     <p className="text-sm pb-1">⭐⭐⭐⭐⭐</p>
-                                    <p className="text-gray-500 text-sm pb-1">{review.date}</p>
-                                    <p className="text-gray-600 text-sm pt-1">
+                                    <p className="text-gray-500 text-sm sm:text-base pb-1">{review.date}</p>
+                                    <p className="text-gray-600 text-sm sm:text-base pt-1">
                                         Variasi : {review.variasi}
                                     </p>
                                     {/* Ulasan */}
-                                    <p className="text-black mt-2 text-justify">{review.ulasan}</p>
+                                    <p className="text-black mt-2 text-justify text-sm sm:text-base">{review.ulasan}</p>
                                     {/* Gambar Ulasan */}
                                     <div className="flex gap-2 mt-2">
                                         <img src={review.imageUlasan} alt="" className="w-16 h-16 rounded-md"/>

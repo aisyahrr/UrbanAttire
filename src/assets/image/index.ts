@@ -43,7 +43,7 @@ export const promoSlider ={
 import event from "./clotches/event.png";
 import event2 from "./clotches/event1.png";
 import gratong1 from "./clotches/gratisongkir.png";
-import gratong from "./clotches/Gratis Ongkir.png";
+import gratong from "./clotches/GratisOng.png";
 import diskon from "./clotches/diskon.png";
 import diskon2 from "./clotches/diskon2.png";
 

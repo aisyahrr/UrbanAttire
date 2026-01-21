@@ -153,18 +153,18 @@ const NavbarUrban: React.FC = () => {
             </h1>
 
             {/* Search */}
-            <div className="lg:flex justify-center gap-3">
+            <div className="lg:flex justify-center items-center gap-3">
             <h1 className="hidden lg:block font-roboto items-center text-[20px] pt-1">
                 Kategori
             </h1>
-            <form className="flex items-center border rounded-md border-slate-300 h-10 w-[250px] lg:w-[660px] bg-slate-100">
+            <form className="flex items-center border rounded-md border-slate-300 h-10 w-[200px] lg:w-[660px] bg-slate-100">
                 <button type="submit">
                 <FontAwesomeIcon icon={faSearch} className="ml-2 pt-1" />
                 </button>
                 <input
                 type="text"
                 placeholder="Cari di Urban Attire..."
-                className="ml-2 pl-2 lg:w-[600px] bg-slate-100 focus:outline-none"
+                className="ml-2 pl-2 w-full bg-slate-100 focus:outline-none placeholder:font-roboto placeholder:text-sm"
                 />
             </form>
             </div>

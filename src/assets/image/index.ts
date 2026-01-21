@@ -1,7 +1,7 @@
 import shoes from "./Slider/shoes.png";
 import bgshoes from "./Slider/Bgshoes.jpg";
 import tas from "./Slider/Tas.png";
-import bgtas from "./Slider/Bgtas.jpg";
+import bgtas from "./Slider/bgtas.jpg";
 import jam from "./Slider/Jam1.png";
 import bgjam from "./Slider/bgjam.png";
 
